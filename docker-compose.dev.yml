@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  cameroon-iol-on-platform:
+    ports:
+      - target: 5000
+        published: 5001
+        mode: host
