@@ -4,19 +4,20 @@
   "description": "The Cameroon IOL allow reports to be sent from the EMR to DHIS2",
   "type": "infrastructure",
   "version": "0.0.1",
-  "dependencies": [],
+  "dependencies": [
+    "interoperability-layer-openhim",
+    "message-bus-kafka"
+  ],
   "environmentVariables": {
-    "KAFKA_HOSTS": "kafka-01:9092",
-    "KAFKA_REPROCESSING_TOPIC": "reprocess",
-    "KAFKA_CONCURRENCY": "2",
-    "KAFKA_PARTITION": "0",
-
     "OPENHIM_TRANSACTION_URL": "http://openhim-core:5001",
     "OPENHIM_MEDIATOR_URL": "https://openhim-core:8080",
     "OPENHIM_ROOT_PASSWORD": "instant101",
     "OPENHIM_STACKNAME": "openhim",
     "REGISTER_MEDIATOR": "true",
     "TRUST_SELF_SIGNED": "true",
-    "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+    "NODE_TLS_REJECT_UNAUTHORIZED": "0",
+
+    "KAFKA_HOSTS": "kafka-01:9092",
+    "KAFKA_TOPICS":"CIOL-notifications, CIOL-payload"
   }
 }

@@ -1,22 +1,19 @@
 projectName: cameroon-iol-on-platform
-image: jembi/platform
+image: jembi/platform:latest
 logPath: /tmp/logs
 
 packages:
-    - <<package-id>>
+    - cameroon-iol-on-platform
 
 customPackages:
-    - id: <<custom-package-id>>
-      path: <<local-path-or-github-url>>
+    - id: cameroon-iol-on-platform
+      path: ../cameroon-iol-on-platform
 
 profiles:
-    - name: <<profile-name>>
+    - name: dev
       packages:
-        - <<profile-package-id-1>>
-        - <<profile-package-id-2>>
-      envVars:
-        - <<env-var-1>>
-        - <<env-var-2>>
+        - cameroon-iol-on-platform
       envFiles:
-        - <<env-file-1>>
-        - <<env-file-2>>
+        - ./.env.local
+      dev: true
+      only: false

@@ -1,8 +1,30 @@
 version: '3.9'
 
 services:
-  cameroon-iol-on-platform:
+  json-mapper:
     ports:
-      - target: 5000
-        published: 5001
-        mode: host
+      -  published: 50010
+         target: 50000
+         protocol: tcp
+         mode: host
+
+  notification-service:
+    ports:
+      -  published: 50020
+         target: 50000
+         protocol: tcp
+         mode: host
+
+  dispatcher-service:
+    ports:
+      -  published: 50030
+         target: 50000
+         protocol: tcp
+         mode: host
+
+  metadata-service:
+    ports:
+      -  published: 50040
+         target: 50000
+         protocol: tcp
+         mode: host

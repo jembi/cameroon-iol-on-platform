@@ -1,5 +1,87 @@
 version: '3.9'
 
 services:
-  cameroon-iol-on-platform:
-    image: organisation/my-package
+  json-mapper:
+    image: tresorl-Latitude-5420:5000/v2/input:1.0-SNAPSHOT
+    environment:
+      KAFKA_HOSTS: ${KAFKA_HOSTS}
+    deploy:
+    volumes:
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/input/logs
+        target: /app/logs
+        read_only: false
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/input/conf
+        target: /app/conf
+        read_only: false
+    networks:
+      openhim:
+      kafka:
+
+
+  notification-service:
+    image: tresorl-Latitude-5420:5000/v2/notifications:1.0-SNAPSHOT
+    environment:
+      KAFKA_HOSTS: ${KAFKA_HOSTS}
+    deploy:
+    volumes:
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/notifications/logs
+        target: /app/logs
+        read_only: false
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/notifications/conf
+        target: /app/conf
+        read_only: false
+    networks:
+      openhim:
+      kafka:
+
+  dispatcher-service:
+    image: tresorl-Latitude-5420:5000/v2/dispatch:1.0-SNAPSHOT
+    environment:
+      KAFKA_HOSTS: ${KAFKA_HOSTS}
+    deploy:
+    volumes:
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/logs
+        target: /app/logs
+        read_only: false
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/conf
+        target: /app/conf
+        read_only: false
+    networks:
+      openhim:
+      kafka:
+
+  metadata-service:
+    image: tresorl-Latitude-5420:5000/v2/metadata:0.0.1-SNAPSHOT
+    environment:
+      KAFKA_HOSTS: ${KAFKA_HOSTS}
+    deploy:
+    volumes:
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/metadata/metadata
+        target: /app/logs
+        read_only: false
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/logs
+        target: /app/logs
+        read_only: false
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/conf
+        target: /app/conf
+        read_only: false
+    networks:
+      openhim:
+      kafka:
+
+networks:
+  openhim: 
+    name: openhim_public
+    external: true
+  kafka:
+    name: kafka_public
+    external: true
