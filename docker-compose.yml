@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   json-mapper:
-    image: tresorl-Latitude-5420:5000/v2/input:1.0-SNAPSHOT
+    image: jembi/json-mapper-service
     environment:
       KAFKA_HOSTS: ${KAFKA_HOSTS}
     deploy:
@@ -21,7 +21,7 @@ services:
 
 
   notification-service:
-    image: tresorl-Latitude-5420:5000/v2/notifications:1.0-SNAPSHOT
+    image: jembi/notification-service
     environment:
       KAFKA_HOSTS: ${KAFKA_HOSTS}
     deploy:
@@ -39,7 +39,7 @@ services:
       kafka:
 
   dispatcher-service:
-    image: tresorl-Latitude-5420:5000/v2/dispatch:1.0-SNAPSHOT
+    image: jembi/dhis2-exporter-service:latest
     environment:
       KAFKA_HOSTS: ${KAFKA_HOSTS}
     deploy:
@@ -57,7 +57,7 @@ services:
       kafka:
 
   metadata-service:
-    image: tresorl-Latitude-5420:5000/v2/metadata:0.0.1-SNAPSHOT
+    image: jembi/report-metadata-service
     environment:
       KAFKA_HOSTS: ${KAFKA_HOSTS}
     deploy:
