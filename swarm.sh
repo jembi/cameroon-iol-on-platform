@@ -72,9 +72,9 @@ function initialize_package() {
       exit 1
     }
 
-  # if [[ "${ACTION}" == "init" ]]; then
-  #   docker::deploy_config_importer $STACK "$COMPOSE_FILE_PATH/importer/docker-compose.config.yml" "interoperability-layer-openhim-config-importer" "openhim"
-  # fi
+  if [[ "${ACTION}" == "init" ]]; then
+    docker::deploy_config_importer $STACK "$COMPOSE_FILE_PATH/importer/openhim-core/docker-compose.config.yml" "cameroon-iol-openhim-config-importer" "cameroon-iol"
+  fi
 }
 
 function destroy_package() {
