@@ -21,7 +21,6 @@ profiles:
     - name: qa
       packages:
         - cameroon-iol-on-platform
-        - reverse-proxy-nginx
       envFiles:
         - ./.env.qa
       dev: false
