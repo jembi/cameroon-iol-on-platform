@@ -17,3 +17,10 @@ profiles:
         - ./.env.local
       dev: true
       only: false
+
+    - name: qa
+      packages:
+        - cameroon-iol-on-platform
+      envFiles:
+        - ./.env.qa
+      dev: false

@@ -64,14 +64,14 @@ services:
     volumes:
       - type: bind
         source: /home/tresorl/ciol_docker_data/data-apps/metadata/metadata
+        target: /app/metadata
+        read_only: false
+      - type: bind
+        source: /home/tresorl/ciol_docker_data/data-apps/metadata/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/logs
-        target: /app/logs
-        read_only: false
-      - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/conf
+        source: /home/tresorl/ciol_docker_data/data-apps/metadata/conf
         target: /app/conf
         read_only: false
     networks:
