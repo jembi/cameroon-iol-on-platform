@@ -77,6 +77,7 @@ services:
     networks:
       openhim:
       kafka:
+      default:
 
 networks:
   openhim: 
@@ -85,3 +86,4 @@ networks:
   kafka:
     name: kafka_public
     external: true
+  default:
