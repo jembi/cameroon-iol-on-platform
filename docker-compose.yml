@@ -8,11 +8,11 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/input/logs
+        source: /home/tresorl/ciol_docker_data/data-apps/input/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/input/conf
+        source: /home/tresorl/ciol_docker_data/data-apps/input/conf
         target: /app/conf
         read_only: false
     networks:
@@ -27,11 +27,11 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/notifications/logs
+        source: /home/tresorl/ciol_docker_data/data-apps/notifications/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/notifications/conf
+        source: /home/tresorl/ciol_docker_data/data-apps/notifications/conf
         target: /app/conf
         read_only: false
     networks:
@@ -45,11 +45,11 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/dispatch/logs
+        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/dispatch/conf
+        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/conf
         target: /app/conf
         read_only: false
     networks:
@@ -63,20 +63,42 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/metadata/metadata
+        source: /home/tresorl/ciol_docker_data/data-apps/metadata/metadata
         target: /app/metadata
         read_only: false
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/metadata/logs
+        source: /home/tresorl/ciol_docker_data/data-apps/metadata/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/ubuntu/ciol_docker_data/data-apps/metadata/conf
+        source: /home/tresorl/ciol_docker_data/data-apps/metadata/conf
         target: /app/conf
         read_only: false
     networks:
       openhim:
       kafka:
+      default:
+
+  cameroon-iol-ui:
+    image: jembi/cameroon-iol-ui:latest
+    # environment:
+    #   KAFKA_HOSTS: ${KAFKA_HOSTS}
+    # deploy:
+    # volumes:
+    #   - type: bind
+    #     source: /home/tresorl/ciol_docker_data/data-apps/metadata/metadata
+    #     target: /app/metadata
+    #     read_only: false
+    #   - type: bind
+    #     source: /home/tresorl/ciol_docker_data/data-apps/metadata/logs
+    #     target: /app/logs
+    #     read_only: false
+    #   - type: bind
+    #     source: /home/tresorl/ciol_docker_data/data-apps/metadata/conf
+    #     target: /app/conf
+    #     read_only: false
+    networks:
+      openhim:
       default:
 
 networks:

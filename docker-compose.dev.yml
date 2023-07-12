@@ -28,3 +28,12 @@ services:
          target: 50000
          protocol: tcp
          mode: host
+
+  cameroon-iol-ui:
+    ports:
+      -  published: 3000
+         target: 3000
+         protocol: tcp
+         mode: host
+
+  
