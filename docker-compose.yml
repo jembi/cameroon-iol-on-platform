@@ -8,11 +8,11 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/input/logs
+        source: $DATA_DIR_INPUT/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/input/conf
+        source: $DATA_DIR_INPUT/conf
         target: /app/conf
         read_only: false
     networks:
@@ -27,11 +27,11 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/notifications/logs
+        source: ${DATA_DIR_NOTIFICATIONS}/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/notifications/conf
+        source: ${DATA_DIR_NOTIFICATIONS}/conf
         target: /app/conf
         read_only: false
     networks:
@@ -45,11 +45,11 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/logs
+        source: ${DATA_DIR_DISPATCH}/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/dispatch/conf
+        source: ${DATA_DIR_DISPATCH}/conf
         target: /app/conf
         read_only: false
     networks:
@@ -63,15 +63,15 @@ services:
     deploy:
     volumes:
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/metadata/metadata
+        source: ${DATA_DIR_METADATA}/metadata
         target: /app/metadata
         read_only: false
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/metadata/logs
+        source: ${DATA_DIR_METADATA}/logs
         target: /app/logs
         read_only: false
       - type: bind
-        source: /home/tresorl/ciol_docker_data/data-apps/metadata/conf
+        source: ${DATA_DIR_METADATA}/conf
         target: /app/conf
         read_only: false
     networks:
@@ -81,22 +81,7 @@ services:
 
   cameroon-iol-ui:
     image: jembi/cameroon-iol-ui:latest
-    # environment:
-    #   KAFKA_HOSTS: ${KAFKA_HOSTS}
-    # deploy:
-    # volumes:
-    #   - type: bind
-    #     source: /home/tresorl/ciol_docker_data/data-apps/metadata/metadata
-    #     target: /app/metadata
-    #     read_only: false
-    #   - type: bind
-    #     source: /home/tresorl/ciol_docker_data/data-apps/metadata/logs
-    #     target: /app/logs
-    #     read_only: false
-    #   - type: bind
-    #     source: /home/tresorl/ciol_docker_data/data-apps/metadata/conf
-    #     target: /app/conf
-    #     read_only: false
+    
     networks:
       openhim:
       default:
