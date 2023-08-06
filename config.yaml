@@ -4,6 +4,7 @@ logPath: /tmp/logs
 
 packages:
     - cameroon-iol-on-platform
+    - reverse-proxy-nginx
 
 customPackages:
     - id: cameroon-iol-on-platform
@@ -21,6 +22,7 @@ profiles:
     - name: qa
       packages:
         - cameroon-iol-on-platform
+        - reverse-proxy-nginx
       envFiles:
         - ./.env.qa
       dev: false
