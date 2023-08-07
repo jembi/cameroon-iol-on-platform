@@ -11,7 +11,7 @@ customPackages:
       path: ../cameroon-iol-on-platform
 
 profiles:
-    - name: dev
+    - name: local
       packages:
         - cameroon-iol-on-platform
       envFiles:
