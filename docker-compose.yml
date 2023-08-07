@@ -86,6 +86,22 @@ services:
       openhim:
       default:
 
+  cameroon-reverse-proxy-nginx:
+    image: nginx:stable
+    networks:
+      public:
+    deploy:
+      replicas: ${REVERSE_PROXY_INSTANCES}
+      placement:
+        max_replicas_per_node: 1
+      resources:
+        limits:
+          cpus: ${NGINX_CPU_LIMIT}
+          memory: ${NGINX_MEMORY_LIMIT}
+        reservations:
+          cpus: ${NGINX_CPU_RESERVE}
+          memory: ${NGINX_MEMORY_RESERVE}
+
 networks:
   openhim: 
     name: openhim_public
