@@ -21,7 +21,7 @@ function init_vars() {
   TIMESTAMP="$(date "+%Y%m%d%H%M%S")"
   TIMESTAMPED_NGINX="${TIMESTAMP}-nginx.conf"
 
-  UTILS_PATH="${COMPOSE_FILE_PATH}/../utils"
+  UTILS_PATH="${COMPOSE_FILE_PATH}/../../utils"
 
   SERVICE_NAMES=("reverse-proxy-nginx")
 
