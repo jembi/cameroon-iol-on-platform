@@ -1,5 +1,5 @@
 projectName: cameroon-iol-on-platform
-image: jembi/platform:latest
+image: jembi/platform:cameroon-iol
 logPath: /tmp/logs
 
 packages:

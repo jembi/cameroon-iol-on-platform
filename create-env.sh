@@ -1,3 +1,3 @@
 #!/bin/bash
 
-envsubst < conf-env-1.template > .env.local
+envsubst < conf-env.template > .env.local

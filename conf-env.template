@@ -8,4 +8,4 @@ export DATA_DIR_INPUT=${HOME}/ciol_docker_data/data-apps/input
 export DATA_DIR_NOTIFICATIONS=${HOME}/ciol_docker_data/data-apps/notifications
 export DATA_DIR_DISPATCH=${HOME}/ciol_docker_data/data-apps/dispatch
 export DATA_DIR_METADATA=${HOME}/ciol_docker_data/data-apps/metadata
-export DATA_DIR_OPENHIM=${HOME}/ciol_docker_data/data-apps/openhim
+

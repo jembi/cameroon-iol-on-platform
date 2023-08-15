@@ -18,6 +18,6 @@
     "NODE_TLS_REJECT_UNAUTHORIZED": "0",
 
     "KAFKA_HOSTS": "kafka-01:9092",
-    "KAFKA_TOPICS":"CIOL-notifications, CIOL-payload"
+    "KAFKA_TOPICS":"CIOL-notifications,CIOL-payload"
   }
 }
