@@ -83,11 +83,15 @@ services:
     image: jembi/cameroon-iol-ui:latest
     
     networks:
+      reverse-proxy:
       openhim:
       default:
       
 
 networks:
+  reverse-proxy:
+    name: reverse-proxy_public
+    external: true
   openhim: 
     name: openhim_public
     external: true
