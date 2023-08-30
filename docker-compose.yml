@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   json-mapper:
-    image: jembi/json-mapper-service
+    image: jembi/json-mapper-service:latest
     environment:
       KAFKA_HOSTS: ${KAFKA_HOSTS}
     deploy:
@@ -21,7 +21,7 @@ services:
 
 
   notification-service:
-    image: jembi/notification-service
+    image: jembi/notification-service:latest
     environment:
       KAFKA_HOSTS: ${KAFKA_HOSTS}
     deploy:
